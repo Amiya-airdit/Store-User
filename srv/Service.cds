@@ -31,4 +31,17 @@ service storeService {
         __v                               : Integer;
   }
 
+  entity vendors { //Caz in storeuser we need to show vendor dropdown list.
+    key id               : String;
+    //     departmentId     : UUID;
+    //     departmentName   : String;
+    //     createdByEmailID : String; //logged In  Power user
+    //     isDeleted        : Boolean default false;
+    //     img              : String;
+    //     type             : String; //type
+        name             : String; //vendor name
+        // shortname        : String; //short name
+        // __v              : Integer;
+  }
+
 }

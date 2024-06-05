@@ -138,6 +138,22 @@ module.exports = cds.service.impl(async function () {
     }
   });
 
+
+
+  //Here for store user we need to get vendors table name that why we are creating new entity to get that .
+
+  this.on("READ","vendors" ,async()=>{
+
+    try {
+      const result = await client.db("Pratham").collection("VendorsWithDeptName").find({}).toArray()
+      console.log(result,'----------------------result of vendors-------------')
+      return result;
+    } catch (error) {
+      console.log(error,'Error occured')
+    }
+  })
+
+
   this.on("disconnect", async () => {
     if (client) {
       await client.close();
